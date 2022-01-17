@@ -2,7 +2,7 @@
   "name": "LiveTL - Translation Filter for Streams",
   "version": "42.0.69",
   "options_ui": {
-    "page": "options.html",
+    "page": "pages/options.html",
     "open_in_tab": true
   },
   "permissions": [
@@ -14,7 +14,7 @@
     "https://www.youtube.com/youtubei/v1/live_chat/get_live_chat_replay/*"
   ],
   "background": {
-    "page": "background.html",
+    "page": "pages/background.html",
     "persistent": true
   },
   "icons": {
@@ -24,6 +24,30 @@
     "default_icon": "./img/48x48.png"
   },
   "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/live_chat*",
+        "https://www.youtube.com/live_chat_replay*"
+      ],
+      "js": [
+        "chat-interceptor.bundle.js",
+        "chat.bundle.js",
+        "injector.bundle.js",
+        "translatormode.bundle.js"
+      ],
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/error*?*"
+      ],
+      "js": [
+        "workaround-injector.bundle.js"
+      ],
+      "all_frames": true
+    }
+  ],
   "web_accessible_resources": [
     "*.js",
     "*.html",

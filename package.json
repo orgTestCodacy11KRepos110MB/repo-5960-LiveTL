@@ -3,11 +3,12 @@
   "version": "7.2.2",
   "description": "Get live translations for YouTube streams, crowdsourced from multilingual viewers!",
   "scripts": {
-    "build": "webpack --mode development",
+    "build": "vite build",
+    "package": "node utils/package.js",
+    "start": "cross-env MINIFY=false vite build --watch",
+    "format:check": "eslint .",
     "build:production": "webpack --mode production",
     "build:android": "webpack --mode production --env android",
-    "package": "node utils/package.js",
-    "start": "webpack serve",
     "ss": "node utils/screenshot.js",
     "update:list": "node utils/genlist.js",
     "type:check": "tsc -p tsconfig.json",
@@ -16,8 +17,7 @@
     "e2e:build": "yarn build:production && yarn package && cp dist/LiveTL-Firefox.zip dist/LiveTL-Firefox.xpi",
     "e2e:test": "pytest --tests-per-worker auto e2e",
     "e2e": "yarn e2e:build && yarn e2e:test",
-    "format": "eslint --cache --fix .",
-    "format:check": "eslint ."
+    "format": "eslint --cache --fix ."
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
