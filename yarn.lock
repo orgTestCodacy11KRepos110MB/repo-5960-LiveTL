@@ -3305,7 +3305,7 @@ configstore@^5.0.1:
     write-file-atomic "^3.0.0"
     xdg-basedir "^4.0.0"
 
-connect-history-api-fallback@^1.6.0:
+connect-history-api-fallback@1.6.0, connect-history-api-fallback@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.6.0.tgz#8b32089359308d111115d81cad3fceab888f97bc"
   integrity sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==
@@ -11692,6 +11692,15 @@ vite-plugin-html-template@^1.1.0:
   integrity sha512-FJ4RUeiY1DivzvaPsdnepLjsn/xB56ChFrhuoKbr0QwNP2jB6Db9j6l+43GzAOlsHSpLfO2EpHuQbeFXZJ8Okw==
   dependencies:
     shelljs "0.8.4"
+
+vite-plugin-mpa@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-mpa/-/vite-plugin-mpa-1.1.1.tgz#8fbb40e776c32dd99d87d3bc65ba91926f58f5a8"
+  integrity sha512-Sh8Y+RByHaAPkRAKGnbFT17Uv7SYfpe9HY6CUpbxiB6/v3VHuzOIbOyyds32EXB7ve3FUSZ+CpCuXylv4KV92w==
+  dependencies:
+    connect-history-api-fallback "1.6.0"
+    shelljs "0.8.4"
+    yargs "16.2.0"
 
 vite-plugin-web-extension@^1.0.4:
   version "1.0.4"
